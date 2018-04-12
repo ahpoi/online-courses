@@ -1,0 +1,48 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*
+ Universal selector * will select each and every element on thepage
+ box-sizing: border-box changes the box model so that the border and the padding is no longer added to the total width/height
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+Body element selector
+Everything related to font, we do not the the universal selected.
+Properties will get inherited
+ */
+body {
+    font-family: "latto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+/*
+Class selector
+95vh - At every point the height of this element should be 95% of the view point height
+background-size: cover - Whatever the width of the view-point, it will try to fit the element inside of the box
+background-position: top - It ensures that whatever the view point size, the top of the image will always stays of the top of the container
+rgba(126,213,111,0.8) - red green blue and the opacity
+clip-path:polygon - The element will be still be visible when we crop - 0 0 (x y) we do not want it to change
+ */
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+}
