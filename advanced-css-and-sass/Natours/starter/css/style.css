@@ -44,5 +44,63 @@ clip-path:polygon - The element will be still be visible when we crop - 0 0 (x y
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/hero.jpg");
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
 }
+
+/*
+We want place the image in the left side corner, one way of doing this is Absolute Positioning
+Next section will learn more about Absolute Positioning
+Top/Left: Where does this measurement start:
+
+The reference is a parent element which has its position set to relative.
+For the logo-box, it is the header
+
+ */
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+/*
+left 50% means of the width of the parent element.
+but we want to make it exact center, we need to shift it.
+We need to translate this entire box, now these 50% are no longer in relation to the parent element but of the element itself
+
+The top 40 left 50, were in relation to parent element
+The translate(), this is in relation to the element itself
+ */
+.text-box {
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*
+display: block so we get them treated as block element so we have the line break
+ */
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
