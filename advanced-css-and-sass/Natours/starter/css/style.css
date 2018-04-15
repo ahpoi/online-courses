@@ -169,9 +169,20 @@ translateX (Moves from left to right), hence the -100
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 /*
-.btn:link this is a psudo class (Link psudo class)
-psudo class is a special state of a selector
+.btn:link this is a psudo class (Link Pseudo class)
+Pseudo class is a special state of a selector
 
 why inline-block?
 So it counts as a block, we should always do this when we want to give padding, width..etc to element
@@ -192,6 +203,7 @@ transition: all (or which property we want to animate) or all (all properties ar
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative;
 }
 
 .btn:hover {
@@ -210,4 +222,68 @@ The -1 is not in relation to the hover, but to the initial link state
 .btn-white {
     background-color: white;
     color: #777;
+}
+
+/*
+We going to use the after Pseudo element
+after: Add a virtual element right after the element that we are selecting, and we can style that element
+
+The trick is to add an element that looks exactly like the button we already have but we put it behind the button
+And when we hover out of the button, then this hidden Pseudo element basically goes back behind the button
+
+For an after pseudo element, we need:
+
+content: Doest matter what is is, can even be empty
+display: inline-block
+
+The after pseudo element gets treated as a child element
+
+We want to behind the actual button using absolute positioning:
+ position: absolute;
+ top: 0;
+ left: 0;
+
+It needs a reference, in this case it will be the header (did that before) but we do not want it to be the header, as we want it to be hidden after the button
+So the reference should be the button
+
+z-index defines the position of the element if they are one on top of the other
+-1 so its defs behind the button
+
+ */
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.5) scaleY(1.6);
+    opacity: 0;
+}
+
+/*
+animation fill mode - backwards:
+It automatically applies the styles of the 0 percent before the animation can start:
+These styles will be applied:
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+ */
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
 }
