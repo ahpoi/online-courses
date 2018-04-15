@@ -80,6 +80,7 @@ The translate(), this is in relation to the element itself
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
@@ -91,6 +92,7 @@ The translate(), this is in relation to the element itself
      Determines if the backpart of an element when we transform is visible to the user
      */
     backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 /*
@@ -165,4 +167,47 @@ translateX (Moves from left to right), hence the -100
         opacity: 1;
         transform: translate(0);
     }
+}
+
+/*
+.btn:link this is a psudo class (Link psudo class)
+psudo class is a special state of a selector
+
+why inline-block?
+So it counts as a block, we should always do this when we want to give padding, width..etc to element
+
+how do we center the button to middle?
+we can do the absolute positioning, transform..etc but this is overkill
+since it is an inline block element, it is still treated as if it was text and hence all we have to do it to set the text-align property to center
+
+For animation:
+We could use the keyframes..etc but we will use the transition property (easiest one)
+transition: all (or which property we want to animate) or all (all properties are enabled to be animated
+ */
+.btn:link,
+.btn.visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+/*
+The -1 is not in relation to the hover, but to the initial link state
+ */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
 }
