@@ -8,12 +8,31 @@ Dark green: #28b485
 */
 
 /*
- Universal selector * will select each and every element on thepage
- box-sizing: border-box changes the box model so that the border and the padding is no longer added to the total width/height
+ Universal selector * will select each and every element on the page
+ Whenever we cam we should use inheritance and avoid setting it on the universal selector
+
+ box-sizing: inherit forcing inheritance
  */
-* {
+*,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
+}
+
+/*
+Setting a root font-size
+Bad practice to set the font-size to 10px, we prevent the user from changing it as its overriding the default fault size of the browser
+
+100% will mean 16px
+62.5% = 10px
+
+box-sizing: border-box changes the box model so that the border and the padding is no longer added to the total width/height
+
+ */
+html {
+    font-size: 62.5%;
     box-sizing: border-box;
 }
 
@@ -25,10 +44,10 @@ Properties will get inherited
 body {
     font-family: "latto", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /*font-size: 16px;*/
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
 }
 
 /*
@@ -57,14 +76,14 @@ The reference is a parent element which has its position set to relative.
 For the logo-box, it is the header
 
  */
-.logo-box {
+.header__logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo {
-    height: 35px;
+.header__logo {
+    height: 3.5rem;
 }
 
 /*
@@ -75,7 +94,7 @@ We need to translate this entire box, now these 50% are no longer in relation to
 The top 40 left 50, were in relation to parent element
 The translate(), this is in relation to the element itself
  */
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -92,17 +111,17 @@ The translate(), this is in relation to the element itself
      Determines if the backpart of an element when we transform is visible to the user
      */
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 /*
 display: block so we get them treated as block element so we have the line break
  */
-.heading-primary-main {
+.heading-primary--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -118,11 +137,11 @@ display: block so we get them treated as block element so we have the line break
     /*animation-delay: 1s; - start after 1s*/
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     animation: moveInRight 1s ease-out;
 }
@@ -144,10 +163,10 @@ translateX (Moves from left to right), hence the -100
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
     80% {
-        transform: translate(10px);
+        transform: translate(1rem);
     }
     100% {
         opacity: 1;
@@ -158,10 +177,10 @@ translateX (Moves from left to right), hence the -100
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
     80% {
-        transform: translate(-10px);
+        transform: translate(-1rem);
     }
     100% {
         opacity: 1;
@@ -172,7 +191,7 @@ translateX (Moves from left to right), hence the -100
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
     100% {
         opacity: 1;
@@ -199,16 +218,17 @@ transition: all (or which property we want to animate) or all (all properties ar
 .btn.visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
 
 /*
@@ -216,10 +236,10 @@ The -1 is not in relation to the hover, but to the initial link state
  */
 .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white {
+.btn--white {
     background-color: white;
     color: #777;
 }
@@ -256,7 +276,7 @@ z-index defines the position of the element if they are one on top of the other
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -264,7 +284,7 @@ z-index defines the position of the element if they are one on top of the other
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -283,7 +303,7 @@ These styles will be applied:
     }
 
  */
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
