@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Mixins:
+// Reusable piece of code that we write into a mixin. And then whenever we use that, that mixin, that code is then put in the place where we used or call that mixin.
+// We can think of it like a huge variable with multiple lines of code
+// Imagine if we want to use the "clearfix" not only on the navigation, but in other places.
+
+$color-primary: #f9ed69;
+$color-secondary: #f08a5d;
+$color-tertiary: #b83b5e;
+$color-text-dark: #333;
+$color-text-light: #eee;
+$width-button: 150px;
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@function divide($a,$b) {
+  @return $a/$b;
+}
+
+nav {
+  margin: divide(60,2) * 1px;
+  background-color: $color-primary;
+  @include clearfix;
+}
+
+.navigation {
+  float: left;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-left:30px;
+
+    &:first-child {
+      margin:0;
+    }
+
+    a:link {
+      @include style-link-text($color-text-dark);
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+%btn-placeholder {
+  padding: 10px;
+  display:inline-block;
+  text-align: center;
+  border-radius: 100px;
+  width: $width-button;
+  @include style-link-text($color-text-light);
+}
+
+.btn-main {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-secondary;
+  }
+  &:hover{
+    background-color: darken($color-secondary,15%);
+  }
+}
+
+.btn-hot {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-tertiary;
+  }
+  &:hover{
+    background-color: lighten($color-tertiary,10%);
+  }
+}
