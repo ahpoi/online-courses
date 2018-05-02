@@ -215,7 +215,7 @@ We could use the keyframes..etc but we will use the transition property (easiest
 transition: all (or which property we want to animate) or all (all properties are enabled to be animated
  */
 .btn:link,
-.btn.visited {
+.btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
