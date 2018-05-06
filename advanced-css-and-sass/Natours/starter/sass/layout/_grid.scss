@@ -3,7 +3,6 @@
 
   //Standard width used is 1140px
   max-width: $grid-width;
-  background-color: #eee;
   //Center block elements inside another block element:
   //Top/Bottom is 0 and Left/Right is auto
   //When its `auto` when the browser renders the page will automatically figure out the margin, since auto it will be set to the same
@@ -17,7 +16,6 @@
   //Attribue selector:
   //Select 5 all element which starts with `col-`
   [class^="col-"] {
-    background-color: orangered;
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
