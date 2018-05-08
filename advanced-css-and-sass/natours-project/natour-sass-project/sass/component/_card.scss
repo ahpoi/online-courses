@@ -1,0 +1,52 @@
+.card {
+  //Perspective has to be in the parent, and a child element for rotation
+  //Text is inverted because it appears it come towards the user, called perspective
+  perspective: 150rem;
+  position: relative;
+  height: 50rem;
+
+  &__side {
+    background-color: orangered;
+    color: #eeeeee;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all .8s ease;
+
+    //Need to stack them
+    //Right now they are taken out of the natural flow, so the parent collapsed and lost its height (50rem).
+    // For float we use clearfix, but with position absolute, we need to specify the same height that we gave to the card itself.
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; //Due to absolute position, they start fitting to their width, FRONT is wider than BACK text. Change it to 10%
+    backface-visibility: hidden; //Fix weird animation error - Hides the backpart of an element
+
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      //Before we hover the card, this back side is already flipped
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+
+      }
+    }
+  }
+
+  //.card:hover .card__side
+  //When we hover the card(main-component), we want the side to transform
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+}
