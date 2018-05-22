@@ -15,6 +15,7 @@
 
   //Attribue selector:
   //Select 5 all element which starts with `col-`
+  //We always want to show the gutter but not on the last
   [class^="col-"] {
     float: left;
     &:not(:last-child) {

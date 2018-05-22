@@ -3,13 +3,10 @@
   //Text is inverted because it appears it come towards the user, called perspective
   perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 
   &__side {
-    background-color: orangered;
-    color: #eeeeee;
-    font-size: 2rem;
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;
 
     //Need to stack them
@@ -22,6 +19,7 @@
     backface-visibility: hidden; //Fix weird animation error - Hides the backpart of an element
 
     border-radius: 3px;
+    overflow: hidden; //Image is overflowing the parent in the corners, so its not rounded anymore
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front {
@@ -34,7 +32,6 @@
 
       &-1 {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-
       }
     }
   }
@@ -42,11 +39,76 @@
   //.card:hover .card__side
   //When we hover the card(main-component), we want the side to transform
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  //FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    //Background blend modes
+    //Describes how elements, background elements should blend
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../img/nat-5.jpg");
+    }
+
+    &--2 {
+      background-image: url("../../img/nat-5.jpg");
+    }
+
+    &--3 {
+      background-image: url("../../img/nat-5.jpg");
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%
+  }
+
+  &__heading-span {
+    //Padding goes around whole element, besides the "a" we don't haev any space, and at the "e" beginning of explorer doesn't haev any space
+    //This is because it gets treated as 1 line of text, one element, padding gets assign on the left and right. Need to treat them as two different element
+    //Use box-decoration-break
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      //Center a block inside a block
+      margin: 0 auto; // 0 top and bottom, left and right is calculated by browser
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
   }
 
 }
