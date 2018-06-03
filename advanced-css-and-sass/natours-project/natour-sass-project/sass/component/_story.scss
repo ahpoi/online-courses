@@ -1,0 +1,43 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+
+  // For non-rectangular design
+  //However its affecting the content too
+  transform: skew(-12deg);
+  //We need to skew the content in the opposite direction
+  //Direct child selector and select everything
+  & > * {
+    //Works only on the text, but not on the __shape, because it already has a transform. Cannot have two transform
+    //We need to add it separately to the __shape
+    transform: skew(12deg);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left; //Element to sit on the left side so content floats around it
+    //Define a vectorized shape
+    //50% - half the width and height so 7.5rem), at 50% 50% because that means its the center of the circle horizontally and vertically
+    //Also besides being floated, it only works if the element has defined dimensions (width/height)
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+
+    clip-path: circle(50% at 50% 50%);
+
+    //Best practice to add some space/move around with an element thats floated is not to use margin. We use the transform
+    transform: translateX(-3rem) skew(12deg); //Skew could not use the direct child element as cannot have two transform
+  }
+
+  &__img {
+    //100% this inmage is within a shape, so its 100% of the parent element __shape so 15rem
+    height: 100%
+  }
+
+}
