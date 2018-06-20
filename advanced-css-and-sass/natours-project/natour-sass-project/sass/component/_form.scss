@@ -1,0 +1,50 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit; //by default they don't give the font family - input element do not inherit
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent; //Hack due to the 3px of border-bottom
+    width: 90%;
+    display: block;
+  }
+
+  &__input:focus {
+    outline: none; //do not want the brower default blue border
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    border-bottom: 3px solid $color-primary;
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    //WorksSafari and chfrom
+    //:: Psudo elements are :: represents things on the webpage
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  //We want to style the label which is a sibling to input, + is the adjacent sibling selector
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden; //Element is gone, we cannot animate the visiblity hence we also use opacity
+    transform: translateY(-4rem);
+  }
+
+}
