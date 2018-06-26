@@ -9,6 +9,7 @@ import {
   MatInputModule,
   MatListModule,
   MatNativeDateModule,
+  MatSelectModule,
   MatSidenavModule,
   MatTabsModule,
   MatToolbarModule
@@ -25,7 +26,8 @@ import {
     MatToolbarModule,
     MatSidenavModule,
     MatTabsModule,
-    MatCardModule],
+    MatCardModule,
+    MatSelectModule],
   exports: [MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
@@ -37,7 +39,8 @@ import {
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
-    MatCardModule]
+    MatCardModule,
+    MatSelectModule]
 })
 
 export class MaterialModule {
