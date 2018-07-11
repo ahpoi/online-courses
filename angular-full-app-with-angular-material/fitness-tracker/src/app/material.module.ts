@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
@@ -13,6 +13,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
+  MatTableModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -31,7 +32,9 @@ import {
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule],
+    MatDialogModule,
+    MatTabsModule,
+    MatTableModule],
   exports: [MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
@@ -46,7 +49,9 @@ import {
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule]
+    MatDialogModule,
+    MatTabsModule,
+    MatTableModule]
 })
 
 export class MaterialModule {
