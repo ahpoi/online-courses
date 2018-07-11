@@ -8,7 +8,7 @@ import { TrainingService } from '../training.service';
   templateUrl: './past-training.component.html',
   styleUrls: ['./past-training.component.css']
 })
-export class PastTrainingComponent implements OnInit , AfterViewInit{
+export class PastTrainingComponent implements OnInit, AfterViewInit {
 
   displayedColumns = ['date', 'name', 'calories', 'duration', 'state'];
 
@@ -27,4 +27,7 @@ export class PastTrainingComponent implements OnInit , AfterViewInit{
     this.dataSource.sort = this.sort
   }
 
+  doFilter(value: string) {
+    this.dataSource.filter = value.trim().toLowerCase();
+  }
 }
