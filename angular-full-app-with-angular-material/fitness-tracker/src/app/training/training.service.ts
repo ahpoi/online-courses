@@ -20,12 +20,15 @@ export class TrainingService {
   fetchAvailableExercises() {
     this.db.collection('availableExercises')
       .snapshotChanges()
-      .map(docArray => docArray.map(doc => ({
-        id: doc.payload.doc.id,
-        name: doc.payload.doc.data().name,
-        duration: doc.payload.doc.data().duration,
-        calories: doc.payload.doc.data().calories,
-      }))).subscribe((exercises: Exercise[]) => {
+      .map(docArray => docArray.map(doc => {
+        const data = doc.payload.doc.data() as {name: string, duration: number, calories: number};
+        return ({
+          id: doc.payload.doc.id,
+          name: data.name,
+          duration: data.duration,
+          calories: data.calories,
+        });
+      })).subscribe((exercises: Exercise[]) => {
       this.availableExercise = exercises;
       this.exercisesChanged.next([...this.availableExercise])
     })
@@ -64,6 +67,10 @@ export class TrainingService {
 
   getCompletedOrCancelledExercises(): Exercise[] {
     return this.exercises.slice();
+  }
+
+  private addDataToDatabase(exercise: Exercise) {
+    this.db.collection('finishedExercises').add(exercise)
   }
 
 }
