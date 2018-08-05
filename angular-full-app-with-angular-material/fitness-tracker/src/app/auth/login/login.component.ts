@@ -1,21 +1,30 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../auth.service';
-import {AuthData} from '../auth-data.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs/Rx';
+import { UIService } from '../../shared/ui.service';
+import { AuthData } from '../auth-data.model';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
+  isLoading: boolean = false;
 
-  constructor(private authService: AuthService) {
+  private loadingSubs: Subscription;
+
+  constructor(private authService: AuthService,
+              private uiService: UIService) {
   }
 
   ngOnInit() {
+    this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
+      this.isLoading = isLoading
+    });
     this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
@@ -30,6 +39,10 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     };
     this.authService.login(data);
+  }
+
+  ngOnDestroy() {
+    this.loadingSubs.unsubscribe();
   }
 
 }
