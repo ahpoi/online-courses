@@ -12,7 +12,7 @@ export class TrainingService {
 
   private availableExercise: Exercise[];
   private runningExercise: Exercise;
-  private fbSubs: Subscription[];
+  private fbSubs: Subscription[] = [];
 
   constructor(private db: AngularFirestore) {
   }
