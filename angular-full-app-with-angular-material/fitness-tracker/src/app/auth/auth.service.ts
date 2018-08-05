@@ -17,8 +17,7 @@ export class AuthService {
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
               private trainingService: TrainingService,
-              private uiService: UIService,
-              private snackbar: MatSnackBar) {
+              private uiService: UIService) {
   }
 
   initAuthListener() {
@@ -42,7 +41,7 @@ export class AuthService {
       this.uiService.loadingStateChanged.next(false);
     }).catch(error => {
       this.uiService.loadingStateChanged.next(false);
-      this.snackbar.open(error.message, null, {duration: 3000})
+      this.uiService.showSnackbar(error.message)
     })
   }
 
@@ -52,7 +51,7 @@ export class AuthService {
       this.uiService.loadingStateChanged.next(false);
     }).catch(error => {
       this.uiService.loadingStateChanged.next(false);
-      this.snackbar.open(error.message, null, {duration: 3000})
+      this.uiService.showSnackbar(error.message)
     });
   }
 
