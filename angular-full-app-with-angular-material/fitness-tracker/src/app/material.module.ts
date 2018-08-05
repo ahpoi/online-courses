@@ -14,6 +14,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
+  MatSnackBarModule,
   MatSortModule,
   MatTableModule,
   MatTabsModule,
@@ -38,7 +39,8 @@ import {
     MatTabsModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule],
+    MatPaginatorModule,
+    MatSnackBarModule],
   exports: [MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
@@ -57,7 +59,8 @@ import {
     MatTabsModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule]
+    MatPaginatorModule,
+    MatSnackBarModule]
 })
 
 export class MaterialModule {
