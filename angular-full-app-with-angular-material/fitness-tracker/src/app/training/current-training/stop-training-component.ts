@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
     selector: 'app-stop-training',
@@ -10,7 +10,6 @@ import {MAT_DIALOG_DATA} from '@angular/material';
     <mat-dialog-actions>
       <button mat-button [mat-dialog-close]="true">Yes</button>
       <button mat-button [mat-dialog-close]="false">No</button>
-
     </mat-dialog-actions>`
   }
 )
