@@ -6,7 +6,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
-  {path: 'training', component: TrainingComponent, canActivate: [AuthGuard]}
+  {path: 'training', loadChildren:'./training/training.module#TrainingModule'} //# means the class
 ];
 
 @NgModule({
