@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State } from '../../app.reducer';
-import { UIService } from '../../shared/ui.service';
+import * as fromRoot from '../../app.reducer';
 import { AuthData } from '../auth-data.model';
 import { AuthService } from '../auth.service';
-import * as fromRoot from '../../app.reducer'
 
 @Component({
   selector: 'app-login',
@@ -21,7 +19,6 @@ export class LoginComponent implements OnInit {
   // private loadingSubs: Subscription;
 
   constructor(private authService: AuthService,
-              private uiService: UIService,
               private store: Store<fromRoot.State>) {
   }
 
@@ -46,11 +43,5 @@ export class LoginComponent implements OnInit {
     };
     this.authService.login(data);
   }
-
-  // ngOnDestroy() {
-  //   if (this.loadingSubs) {
-  //     this.loadingSubs.unsubscribe();
-  //   }
-  // }
-
+  
 }
