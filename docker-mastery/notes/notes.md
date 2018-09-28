@@ -9,3 +9,9 @@ run always start a new container
 start start an existing container 
 
 docker container logs <container-name>
+
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
+docker volume inspect mysql-db
+docker container rm -f mysql
+
