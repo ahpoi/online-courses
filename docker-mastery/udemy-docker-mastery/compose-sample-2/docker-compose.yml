@@ -6,6 +6,6 @@ services:
     ports:
       - '80:80' # expose 80 on host and sent to 80 in container
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro #Bind mount to a file called ngnix.conf. Taking a file from my local env to the container. ro means read only in the container
   web:
     image: httpd  # this will use httpd:latest
