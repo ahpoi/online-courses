@@ -87,3 +87,5 @@ networks:
 
 volumes:
   db-data:
+
+#To run docker stack deploy -c example-voting-app-stack.yml voteapp
