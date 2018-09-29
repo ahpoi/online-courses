@@ -10,7 +10,7 @@ start start an existing container
 
 docker container logs <container-name>
 
-//Named volume
+//Named volume when you do <name>: before the path 
 docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 docker volume inspect mysql-db

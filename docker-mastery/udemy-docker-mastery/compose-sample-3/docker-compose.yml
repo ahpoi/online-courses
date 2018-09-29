@@ -6,8 +6,9 @@ version: '2'
 services:
   proxy:
     build:
-      context: .
+      context: . #Current directory
       dockerfile: nginx.Dockerfile
+    image: ngnix-custom #name it with a custom name to get it stored in local cache. When we run docker-compose up its going to check if its in the cache
     ports:
       - '80:80'
   web:

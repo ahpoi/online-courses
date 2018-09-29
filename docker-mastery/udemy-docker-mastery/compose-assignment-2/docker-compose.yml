@@ -3,7 +3,8 @@ version: '2'
 
 services:
   drupal:
-      image: drupal
+      image: custom-drupal
+      build: . #Just build in the directory and use the docker file thats the default name
       ports:
         - "8080:80"
       volumes:
@@ -18,3 +19,8 @@ services:
       image: postgres
       environment:
         - POSTGRES_PASSWORD=mypasswd
+      volumes:
+        - drupal-data:/var/lib/postgresql/data
+
+volumes:
+  drupal-data:
