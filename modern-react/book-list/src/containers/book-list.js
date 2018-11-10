@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 class BookList extends Component {
 
@@ -19,3 +20,17 @@ class BookList extends Component {
   }
 
 }
+
+/**
+ * Take application state will convert it to props
+ */
+function mapStateToProps(state) {
+  return {
+      books: state.books
+  };
+}
+
+/**
+ * Takes a function and a component that produce a container
+ */
+export default connect(mapStateToProps)(BookList)
