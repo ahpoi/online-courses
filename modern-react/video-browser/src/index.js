@@ -19,7 +19,7 @@ import _ from 'lodash'
 };
  */
 
-const YOUTUBE_API_KEY = '';
+const YOUTUBE_API_KEY = '-o8gxvtFZAVqqhiQE';
 
 
 class App extends React.Component {
