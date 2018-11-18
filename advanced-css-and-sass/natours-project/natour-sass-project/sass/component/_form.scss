@@ -13,6 +13,7 @@
     border-bottom: 3px solid transparent; //Hack due to the 3px of border-bottom
     width: 90%;
     display: block;
+    transition: all .3s;
   }
 
   &__input:focus {
@@ -46,5 +47,67 @@
     visibility: hidden; //Element is gone, we cannot animate the visiblity hence we also use opacity
     transform: translateY(-4rem);
   }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+    /**
+    With psudo element always need to specify the property content
+     */
+    &::after {
+      content: "";
+      display: block;;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+  }
+
+  /**
+    We have all the radio input element that are selected (checked)
+    But we want to manipulate the radio-button
+    The radio input, but we want to select radio button. Span is not a directly child of radio-input
+    We use the sibling select to select the label and then the child (span)
+
+    Use the adjacent sibing selector ~
+
+    As soon as we hit the label element, the radio input becomes checked
+    then we select the sibling, then the child, as we want to change that
+   */
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
 
 }
