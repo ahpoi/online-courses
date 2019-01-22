@@ -1,5 +1,36 @@
 @import "variables";
 
+@mixin warning {
+  background-color: orange;
+  color: white;
+}
+
+@mixin large-text {
+  font: {
+    size: 22px;
+    weight: bold;
+  }
+}
+
+@mixin rounded {
+  border-radius: 6px;
+}
+
+@mixin box {
+  @include rounded;
+  border: 1px;
+}
+
+@mixin fancy-links {
+  a {
+    font-style: italic;
+    text-decoration: none;
+  }
+}
+
+//Can also include it on the root level
+@include fancy-links
+
 body {
   font-family: $text-font;
   color: $text-color;
@@ -7,6 +38,10 @@ body {
 
 h1, h2, h3, h4 {
   font-family: $headline-font;
+}
+
+h2 {
+  @include large-text;
 }
 
 p {
@@ -17,8 +52,13 @@ a {
   color: $link-color;
 }
 
-#header {
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+}
 
+#header {
+  @include box;
   height: $header-height;
   background-color: $theme-color;
 

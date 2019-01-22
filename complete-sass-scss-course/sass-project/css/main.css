@@ -1,9 +1,13 @@
 body {
   font-family: Verdana, Arial, sans-serif;
-  color: #ff0e4d; }
+  color: #222222; }
 
 h1, h2, h3, h4 {
   font-family: "Palentino Linotype", Georgia, serif; }
+
+h2 {
+  font-size: 22px;
+  font-weight: bold; }
 
 p {
   font-family: Verdana, Arial, sans-serif; }
@@ -11,7 +15,14 @@ p {
 a {
   color: #f27731; }
 
+.warning-button {
+  background-color: orange;
+  color: white;
+  padding: 8px 12px; }
+
 #header {
+  border-radius: 6px;
+  border: 1px;
   height: 60px;
   background-color: #170a48; }
   #header #main-menu li {
