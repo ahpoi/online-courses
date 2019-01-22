@@ -1,31 +1,45 @@
+@import "variables";
+
 body {
-  font-family: sans-serif;
+  font-family: $text-font;
+  color: $text-color;
 }
 
 h1, h2, h3, h4 {
-  
+  font-family: $headline-font;
 }
 
 p {
-  
+  font-family: $text-font;
 }
 
 a {
-
+  color: $link-color;
 }
 
 #header {
 
-  #main-menu {
+  height: $header-height;
+  background-color: $theme-color;
 
+  #main-menu {
+    li {
+      display: inline;
+    }
+    a {
+      color: $menu-item-color;
+    }
   }
-  
+
   #logo {
 
   }
 }
 
 #main {
+  width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
 
   #content {
   }
@@ -35,5 +49,6 @@ a {
 }
 
 #footer {
-
+  height: $footer-height;
+  background-color: $ternary-color;
 }
