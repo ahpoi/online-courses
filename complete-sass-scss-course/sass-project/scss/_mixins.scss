@@ -9,6 +9,13 @@
   -webkit-box-shadow: $shadow;
 }
 
+@mixin apply-to-ie-6 {
+  // * html only applies to IE6
+  * html {
+    @content;
+  }
+}
+
 @mixin large-text {
   font: {
     size: 22px;
