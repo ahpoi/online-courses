@@ -1,20 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreyya+Sans);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 a {
   font-style: italic;
   text-decoration: none; }
 
+* html body {
+  font-size: 125%; }
+
 body {
-  font-family: Verdana, Arial, sans-serif;
+  font-family: "Alegreya Sans", Arial, sans-serif;
   color: #222222; }
 
 h1, h2, h3, h4 {
-  font-family: "Palentino Linotype", Georgia, serif; }
+  font-family: "Titillium Web", Georgia, serif; }
 
 h2 {
   font-size: 22px;
   font-weight: bold; }
 
 p {
-  font-family: Verdana, Arial, sans-serif; }
+  font-family: "Alegreya Sans", Arial, sans-serif; }
 
 a {
   color: #f27731; }
@@ -27,9 +32,9 @@ a {
 #header {
   border-radius: 6px;
   border: 1px solid #999;
-  box-shadow: 2px 0px 4px #999, 1px 1 px 6px #f27731;
-  -moz-box-shadow: 2px 0px 4px #999, 1px 1 px 6px #f27731;
-  -webkit-box-shadow: 2px 0px 4px #999, 1px 1 px 6px #f27731;
+  box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
   height: 60px;
   background-color: #170a48; }
   #header #main-menu li {

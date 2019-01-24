@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+@include google-font("Alegreyya+Sans");
+@include google-font("Titillium+Web");
+
 //Can also include it on the root level
 @include fancy-links;
 
