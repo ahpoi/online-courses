@@ -7,6 +7,13 @@ a {
 * html body {
   font-size: 125%; }
 
+.error, .critical-error, .cta-button, .super-cta-button {
+  color: red; }
+
+.critical-error {
+  bottom: 1px solid red;
+  font-weight: bold; }
+
 body {
   font-family: "Alegreya Sans", Arial, sans-serif;
   color: #222222; }
@@ -29,12 +36,19 @@ a {
   a:hover {
     color: #ca510d; }
 
-.warning-button {
+.warning-button, .cta-button, .super-cta-button {
   background-color: orange;
   color: white;
   padding: 8px 12px; }
-  .warning-button:hover {
+  .warning-button:hover, .cta-button:hover, .super-cta-button:hover {
     background-color: #ffb733; }
+
+.cta-button, .super-cta-button {
+  border-radius: 6px;
+  font-weight: bold; }
+
+.super-cta-button {
+  font-size: 1.25em; }
 
 #header {
   border-radius: 6px;
