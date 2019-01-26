@@ -69,6 +69,7 @@ body {
   } @else {
     color: $text-color;
   }
+  background-color: $body-background-color;
   @include large-screens {
     font-size: em(18px);
   }
