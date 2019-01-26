@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "functions";
 
 @include google-font("Alegreyya+Sans");
 @include google-font("Titillium+Web");
@@ -17,7 +18,7 @@ body {
   font-family: $text-font;
   color: $text-color;
   @include large-screens {
-    font-size: 125%;
+    font-size: em(18px);
   }
 }
 
@@ -84,9 +85,23 @@ a {
   margin-right: auto;
 
   #content {
+    float: left;
+    widows: 6 * $col;
   }
 
   #sidebar {
+    float: right;
+    widows: 2 * $col;
+
+    li {
+      list-style-type: none;
+      padding: em(16px) em(20px);
+      border-bottom: 1px dashed #999;
+    }
+
+    &:hover {
+      background-color: #efefef;
+    }
   }
 }
 

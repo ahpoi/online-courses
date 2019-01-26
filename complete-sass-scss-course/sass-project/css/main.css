@@ -12,7 +12,7 @@ body {
   color: #222222; }
   @media only screen and (max-width: 960px) {
     body {
-      font-size: 125%; } }
+      font-size: 1.125em; } }
 
 h1, h2, h3, h4 {
   font-family: "Titillium Web", Georgia, serif; }
@@ -63,6 +63,18 @@ a {
     #main {
       width: auto;
       max-width: 960px; } }
+  #main #content {
+    float: left;
+    widows: 69.75%; }
+  #main #sidebar {
+    float: right;
+    widows: 23.25%; }
+    #main #sidebar li {
+      list-style-type: none;
+      padding: 1em 1.25em;
+      border-bottom: 1px dashed #999; }
+    #main #sidebar:hover {
+      background-color: #efefef; }
 
 #footer {
   height: 90px;
