@@ -15,6 +15,13 @@ If we have a media query, this is not going to work. We can't use a selector tha
     font-size: em(20px);
   }
 }
+
+Optional:
+Preprocessor won't fail if it does not exist
+.sub-title {
+  @extend %highlight !optional;
+}
+
  */
 @import url(https://fonts.googleapis.com/css?family=Alegreyya+Sans);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
@@ -38,7 +45,7 @@ a {
 
 body {
   font-family: "Alegreya Sans", Arial, sans-serif;
-  color: #222222; }
+  color: #000; }
   @media only screen and (max-width: 960px) {
     body {
       font-size: 1.125em; } }
