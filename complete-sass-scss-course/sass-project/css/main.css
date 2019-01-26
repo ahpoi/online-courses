@@ -26,11 +26,15 @@ p {
 
 a {
   color: #f27731; }
+  a:hover {
+    color: #ca510d; }
 
 .warning-button {
   background-color: orange;
   color: white;
   padding: 8px 12px; }
+  .warning-button:hover {
+    background-color: #ffb733; }
 
 #header {
   border-radius: 6px;
@@ -43,7 +47,13 @@ a {
   #header #main-menu li {
     display: inline; }
   #header #main-menu a {
-    color: white; }
+    color: white;
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(254, 254, 254, 0);
+    transition: border-bottom 1s;
+    transition-timing-function: ease-in-out; }
+    #header #main-menu a:hover {
+      border-bottom: 1px solid #fefefe; }
 
 #main {
   width: 960px;
