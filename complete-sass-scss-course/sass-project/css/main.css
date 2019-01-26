@@ -1,3 +1,21 @@
+/**
+Rules when it comes to extends:
+
+We cannot have selector sequences:
+
+.cta-button {
+  @extend .warning-button .foo
+}
+
+If we have a media query, this is not going to work. We can't use a selector that outside the media to extend the inside the media queries
+
+@media screen {
+  .super-cta-button {
+    @extend .cta-button;
+    font-size: em(20px);
+  }
+}
+ */
 @import url(https://fonts.googleapis.com/css?family=Alegreyya+Sans);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 a {
@@ -6,6 +24,10 @@ a {
 
 * html body {
   font-size: 125%; }
+
+/*Extend only selector, do not generate css: */
+.sub-title {
+  font-style: italic; }
 
 .error, .critical-error, .cta-button, .super-cta-button {
   color: red; }

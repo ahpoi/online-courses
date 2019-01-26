@@ -1,3 +1,29 @@
+/**
+Rules when it comes to extends:
+
+We cannot have selector sequences:
+
+.cta-button {
+  @extend .warning-button .foo
+}
+
+If we have a media query, this is not going to work. We can't use a selector that outside the media to extend the inside the media queries
+
+@media screen {
+  .super-cta-button {
+    @extend .cta-button;
+    font-size: em(20px);
+  }
+}
+
+Optional:
+Preprocessor won't fail if it does not exist
+.sub-title {
+  @extend %highlight !optional;
+}
+
+ */
+
 @import "variables";
 @import "mixins";
 @import "functions";
@@ -12,6 +38,15 @@
   body {
     font-size: 125%;
   }
+}
+
+/*Extend only selector, do not generate css: */
+%highlight {
+  font-style: italic;
+}
+
+.sub-title {
+  @extend %highlight;
 }
 
 .error {
