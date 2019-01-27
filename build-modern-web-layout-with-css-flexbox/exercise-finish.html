@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>CSS Flexbox</title>
+
+<style>
+
+header, footer { height: 100px; background: skyblue; }
+
+#parent { height: 800px; display: flex; flex-flow: row; }
+  
+.child1 { background: yellowgreen; flex: 1 5 200px; }
+ 
+.child2 { background: powderblue; flex: 3 1 600px; }
+   
+.child3 { background: olivedrab; flex: 1 5 200px; }
+
+</style>
+
+</head>
+
+<body>
+
+<header>Header</header>
+ 
+ <div id="parent">
+ 
+	<div class="child1">Child1</div>
+ 
+    <div class="child2">Child2</div>
+    
+    <div class="child3">Child3</div>
+    
+ </div>
+ 
+<footer>Footer</footer>
+
+</body>
+</html>
