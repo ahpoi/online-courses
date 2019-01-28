@@ -26,13 +26,17 @@ This simultaneously makes the child elements in the container to be flex items.
 
             flex-flow: row nowrap;
             justify-content: space-between;
+
+            /*Cross axis alignment align-items Similar to justify content but runs perpendicular to the main flow axis */
+            /*align-items: stretch; is the default*/
+            /*flex-start: all the child flex items are aligned to the top edge of the parent flex container. The flex item height is determinted by their content unless specify overwise  */
+            align-items: center;
         }
 
         .child {
             width: 100px;
-            margin: 20px;
             /* margin: 20px;with for parent container with space-between, margin appear below and above and on the side but do not get space in between*/
-            /*Margin left and margin right are ignored completely when space around or space between*/
+            /*!*Margin left and margin right are ignored completely when space around or space between!**/
         }
 
         .child1 {
@@ -53,6 +57,8 @@ This simultaneously makes the child elements in the container to be flex items.
 
         .child5 {
             background: salmon;
+            /*height: 100px;*/
+            /*height Override the stretch */
         }
 
         .child6 {
