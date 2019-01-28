@@ -71,3 +71,6 @@ Summary: IThe fle wrap using a value of wrap, he will maintain the child element
 The remaining children between the first and last are then equally spaced apart. 
 `space-around`: similar to `space-between` but the first child and last child elements, have a little bit of space before them on the left hand side and after them on the right hand side. The amount of space between each of the child elements 
 gets divided into and dropped before the first child element and after the last child element. 
+
+##Align Self
+Allow a child to override default alignment/alignment on the parent container
