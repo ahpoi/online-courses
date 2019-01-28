@@ -57,3 +57,10 @@ Summary:
 If the width of the parent container is greater than the width of the child element, then the child element width are maintain.
 If the width of the parent container is less than the width of the child element. Then the child element with are scaled 
 Using `min-width` overflows them
+
+##Flex Wrap
+Go into a new line, instead of scale or overflow
+`flex-wrap: wrap;` Depending of available space. If they can all fit on one line, they will, If the isn't enough room, they will break into a new row. 
+
+Default is `no-wrap`
+Summary: IThe fle wrap using a value of wrap, he will maintain the child element width, forcing the child elements into additional line if needed
