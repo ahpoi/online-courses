@@ -65,3 +65,9 @@ Go into a new line, instead of scale or overflow
 Default is `no-wrap`
 Summary: IThe fle wrap using a value of wrap, he will maintain the child element width, forcing the child elements into additional line if needed
 
+##Main axis and alignment
+
+`space-between`: The very first child element is pushed to the parent element starting point. On the right hand side, the last child element is pushed to the parent container ending point.
+The remaining children between the first and last are then equally spaced apart. 
+`space-around`: similar to `space-between` but the first child and last child elements, have a little bit of space before them on the left hand side and after them on the right hand side. The amount of space between each of the child elements 
+gets divided into and dropped before the first child element and after the last child element. 
