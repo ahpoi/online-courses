@@ -12,10 +12,19 @@ This simultaneously makes the child elements in the container to be flex items.
         #parent {
             display: flex;
             background: gainsboro;
-            height: 100px;
+            height: 300px;
             /*flex-direction: row;*/
             /*flex-wrap: wrap;*/
-            flex-flow: row wrap;
+
+            /*Horizontal spacing and alignment*/
+            /*flex-flow: row wrap;*/
+            /*justify-content: space-around;*/
+
+            /*Vertical spacing and alignment*/
+            /*flex-flow: column wrap;*/
+            /*justify-content: space-around;*/
+
+            flex-flow: column wrap;
             justify-content: space-around;
         }
 
