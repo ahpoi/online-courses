@@ -47,6 +47,10 @@ This simultaneously makes the child elements in the container to be flex items.
             /*!*Margin left and margin right are ignored completely when space around or space between!**/
         }
 
+        .childnested {
+            width: 100px;
+        }
+
         .child1 {
             flex: 1 1 300px;
             background: skyblue;
@@ -54,6 +58,7 @@ This simultaneously makes the child elements in the container to be flex items.
 
         .child2 {
             flex: 10 5 300px;
+            display: flex;
             background: powderblue;
         }
 
@@ -99,31 +104,33 @@ This simultaneously makes the child elements in the container to be flex items.
         1
     </div>
     <div class="child child2">
-        2
+
+        <div class="child child4 childnested">
+            4
+        </div>
+        <div class="child child5 childnested">
+            5
+        </div>
+        <div class="child child6 childnested">
+            6
+        </div>
+
+        <div class="child child7 childnested">
+            7
+        </div>
+        <div class="child child8 childnested">
+            8
+        </div>
+        <div class="child child9 childnested">
+            9
+        </div>
+
     </div>
     <div class="child child3">
         3
     </div>
 
-    <!--<div class="child child4">-->
-        <!--4-->
-    <!--</div>-->
-    <!--<div class="child child5">-->
-        <!--5-->
-    <!--</div>-->
-    <!--<div class="child child6">-->
-        <!--6-->
-    <!--</div>-->
 
-    <!--<div class="child child7">-->
-        <!--7-->
-    <!--</div>-->
-    <!--<div class="child child8">-->
-        <!--8-->
-    <!--</div>-->
-    <!--<div class="child child9">-->
-        <!--9-->
-    <!--</div>-->
 </div>
 
 </body>
