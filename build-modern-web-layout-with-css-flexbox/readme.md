@@ -120,3 +120,9 @@ flex-grow: How much shold i grow myself compared to other elements.
             background: cadetblue;
         }
 ```
+
+##Shorthand
+`flex: [flex-grow] [flex-shrink] [flex-basic]`
+
+Default values are: 
+`flex: 0 1 auto`
