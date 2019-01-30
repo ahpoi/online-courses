@@ -89,11 +89,17 @@ Think of it as a base size, as starting size
         }
 ```
 
-##Flex grow
+##Flex grow/Flex shink
 How flex item will grow, eg when there is extra spaces in the container. 
 
 The first child and last child revert back to the flex-basis 300px, but the middle on expands to take the remaining space.
 Meaning default flex grow is 0
+
+Flex shrink works when there is not enough space for our ideal layout
+Default value is 1. 
+
+flex-shrink: How much should i shrink myself compared to other elements.
+flex-grow: How much shold i grow myself compared to other elements. 
 
 ```$xslt
  .child1 {
