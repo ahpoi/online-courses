@@ -126,3 +126,5 @@ flex-grow: How much shold i grow myself compared to other elements.
 
 Default values are: 
 `flex: 0 1 auto`
+
+`flex 1` means flex-grow is set to 1, flex-shrink is set to 0 and flex basis is set to auto
