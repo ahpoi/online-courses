@@ -74,3 +74,7 @@ gets divided into and dropped before the first child element and after the last 
 
 ##Align Self
 Allow a child to override default alignment/alignment on the parent container
+
+##Align Content
+Only work if we have wrapping child elements
+The value that we can use for align-content is the same of align-items. Default is `stretch`
