@@ -78,3 +78,39 @@ Allow a child to override default alignment/alignment on the parent container
 ##Align Content
 Only work if we have wrapping child elements
 The value that we can use for align-content is the same of align-items. Default is `stretch`
+
+##Flex basic
+Establish a flexible starting point.
+Think of it as a base size, as starting size
+```$xslt
+    .child2 {
+            flex-basis: 300px;
+            background: powderblue;
+        }
+```
+
+##Flex grow
+How flex item will grow, eg when there is extra spaces in the container. 
+
+The first child and last child revert back to the flex-basis 300px, but the middle on expands to take the remaining space.
+Meaning default flex grow is 0
+
+```$xslt
+ .child1 {
+            flex-basis: 300px;
+            /*flex-grow: 1;*/
+            background: skyblue;
+        }
+
+        .child2 {
+            flex-basis: 300px;
+            flex-grow: 1;
+            background: powderblue;
+        }
+
+        .child3 {
+            flex-basis: 300px;
+            /*flex-grow: 1;*/
+            background: cadetblue;
+        }
+```

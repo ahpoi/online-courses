@@ -12,8 +12,8 @@ This simultaneously makes the child elements in the container to be flex items.
         #parent {
             display: flex;
             background: gainsboro;
-            height: 600px;
-            width: 300px;
+            /*height: 600px;*/
+            /*width: 300px;*/
             /*flex-direction: row;*/
             /*flex-wrap: wrap;*/
 
@@ -27,10 +27,10 @@ This simultaneously makes the child elements in the container to be flex items.
 
             /*flex-flow: row nowrap;*/
 
-            flex-flow: row wrap;
-            justify-content: space-between;
+            flex-flow: row nowrap;
+            /*justify-content: space-between;*/
 
-            align-content: center;
+            /*align-content: center;*/
 
             /*Cross axis alignment align-items Similar to justify content but runs perpendicular to the main flow axis */
             /*align-items: stretch; is the default*/
@@ -41,21 +41,27 @@ This simultaneously makes the child elements in the container to be flex items.
         }
 
         .child {
-            width: 100px;
-            /*height: 100px;*/
+            /*width: 300px;*/
+            height: 100px;
             /* margin: 20px;with for parent container with space-between, margin appear below and above and on the side but do not get space in between*/
             /*!*Margin left and margin right are ignored completely when space around or space between!**/
         }
 
         .child1 {
+            flex-basis: 300px;
+            flex-grow: 1;
             background: skyblue;
         }
 
         .child2 {
+            flex-basis: 300px;
+            flex-grow: 1;
             background: powderblue;
         }
 
         .child3 {
+            flex-basis: 300px;
+            flex-grow: 1;
             background: cadetblue;
         }
 
@@ -102,25 +108,25 @@ This simultaneously makes the child elements in the container to be flex items.
         3
     </div>
 
-    <div class="child child4">
-        4
-    </div>
-    <div class="child child5">
-        5
-    </div>
-    <div class="child child6">
-        6
-    </div>
+    <!--<div class="child child4">-->
+        <!--4-->
+    <!--</div>-->
+    <!--<div class="child child5">-->
+        <!--5-->
+    <!--</div>-->
+    <!--<div class="child child6">-->
+        <!--6-->
+    <!--</div>-->
 
-    <div class="child child7">
-        7
-    </div>
-    <div class="child child8">
-        8
-    </div>
-    <div class="child child9">
-        9
-    </div>
+    <!--<div class="child child7">-->
+        <!--7-->
+    <!--</div>-->
+    <!--<div class="child child8">-->
+        <!--8-->
+    <!--</div>-->
+    <!--<div class="child child9">-->
+        <!--9-->
+    <!--</div>-->
 </div>
 
 </body>
