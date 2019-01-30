@@ -48,7 +48,8 @@ This simultaneously makes the child elements in the container to be flex items.
         }
 
         .childnested {
-            width: 100px;
+            /*width: 100px;*/
+            flex-grow: 1;
         }
 
         .child1 {
@@ -59,7 +60,8 @@ This simultaneously makes the child elements in the container to be flex items.
         .child2 {
             flex: 10 5 300px;
             display: flex;
-            flex-flow: row wrap;
+            /*flex-flow: row wrap;*/
+            flex-flow: row nowrap;
             background: powderblue;
         }
 
